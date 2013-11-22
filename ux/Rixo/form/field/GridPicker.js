@@ -214,7 +214,8 @@ Ext.define('Ext.ux.Rixo.form.field.GridPicker', {
 			sm = grid.getSelectionModel(),
 			view = grid.getView(),
 			node = view.getNode(index),
-			bufferedPlugin = grid.plugins.filter(function(p) {
+			plugins = grid.plugins,
+			bufferedPlugin = plugins && plugins.filter(function(p) {
 				return p instanceof Ext.grid.plugin.BufferedRenderer
 			})[0];
 
