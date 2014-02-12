@@ -91,21 +91,22 @@ Ext.define('Ext.ux.Rixo.form.field.GridPicker', {
 	,getGridConfig: function() {
 		var config = {};
 		
-		// Ext.apply() supports defaults as the third argument, see docs
 		Ext.apply(config, this.gridConfig, this.defaultGridConfig);
 
 		Ext.applyIf(config, {
 			store: this.store
-			
-			// Layout fails because the Grid panel can't determine
-			// its width; so just set it here. Input element should
-			// be already rendered by the time this gets called.
-			,width: this.inputEl.getWidth()
-			,columns: columns = [{
+
+			,columns: [{
 				dataIndex: this.displayField || this.valueField
 				,flex: 1
 			}]
 		});
+
+		// Avoid "Layout run failed" error
+		// See: http://stackoverflow.com/a/21740832/1387519
+		if (!config.width) {
+			config.width = this.inputEl.getWidth();
+		}
 
 		return config;
 	}
