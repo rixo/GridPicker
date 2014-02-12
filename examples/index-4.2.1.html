@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GridPicker Demo</title>
+
+    <link rel="stylesheet" href="http://cdn.sencha.io/ext-4.2.0-gpl/resources/css/ext-all-neptune.css">
+    <script src="http://cdn.sencha.com/ext/gpl/4.2.1/ext-all-dev.js"></script>
+
+    <script src="examples.js"></script>
+
+</head>
+<body>
+<div class="container" style="width: 960px; margin: auto;">
+    <h1>GridPicker Demo</h1>
+
+    <p>Here are a few examples of what you can do, and how to do it, with the <a href="https://github.com/rixo/GridPicker">`GridPicker`</a> component.</p>
+
+    <p>
+        I've also set up a little <a href="benchmark">benchmarking demo</a>. The code is not easily readable,
+        so that's not the best for learning, but it demonstrates the difference in reactivity between a buffered
+        grid and a regular combo box.
+    </p>
+
+    <h2>Example 1: Buffered Rendering</h2>
+
+    <p>50k records in a combo. How long do you think it will take to open?</p>
+
+    <div id="example1"></div>
+
+    <h2>Example 2: Simplistic Example</h2>
+
+    <p>
+        This example demonstrates that sensible default configuration is implemented, so you don't need
+        much to have the component up and running.
+    </p>
+
+    <div id="example2"></div>
+
+    <p>
+        The code for this combo fits in a standard 80 chars line:
+    </p>
+
+    <code>Ext.widget('gridpicker', {renderTo: 'example2', store: ['Foo', 'Bar', 'Baz']});</code>
+
+    <h2>Example 3: Grid Features</h2>
+
+    <p>If you're not interested in huge datasets, maybe the ease of presenting your data will convince you.</p>
+
+    <div id="example3"></div>
+
+</div><!-- container -->
+</body>
+</html>

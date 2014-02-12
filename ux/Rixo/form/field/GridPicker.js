@@ -8,10 +8,8 @@ Ext.define('Ext.ux.Rixo.form.field.GridPicker', {
 	,alias: 'widget.gridpicker'
 
 	,requires: [
-		'Ext.grid.Panel',
-		'Ext.ux.Rixo.Ext.form.field.ComboBox.GetOptions',
-		'Ext.ux.Rixo.form.field.GridPickerKeyNav',
-		'Ext.ux.Rixo.polyfill.ForEach',
+		'Ext.grid.Panel'
+		,'Ext.ux.Rixo.form.field.GridPickerKeyNav'
 	]
 
 	,defaultGridConfig: {
@@ -268,24 +266,6 @@ Ext.define('Ext.ux.Rixo.form.field.GridPicker', {
 		}
 	}
 
-	/**
-	 * Gets the option to load the store with the specified query.
-	 *
-	 * @param {String} queryString
-	 * @return {String}
-	 * @protected
-	 */
-	,getLoadOptions: function(queryString) {
-		var filter = this.queryFilter;
-		if (filter) {
-			filter.disabled = false;
-			filter.setValue(this.enableRegEx ? new RegExp(queryString) : queryString);
-			return {
-				filters: [filter]
-			};
-		}
-	}
-
 	// private
 	,onTypeAhead: function() {
 		var me = this,
@@ -307,5 +287,33 @@ Ext.define('Ext.ux.Rixo.form.field.GridPicker', {
 				me.selectText(selStart, newValue.length);
 			}
 		}
+	}
+}, function() {
+
+	// Specific to Ext 4.2.0
+	if (Ext.getVersion().isLessThan('4.2.1')) {
+		Ext.require('Ext.ux.Rixo.form.field.GridPicker-4-2-0');
+	}
+
+	// Polyfill for forEach
+	// source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+	if (!Array.prototype.forEach) {
+		Array.prototype.forEach = function(fun /*, thisArg */) {
+			"use strict";
+
+			if (this === void 0 || this === null)
+				throw new TypeError();
+
+			var t = Object(this);
+			var len = t.length >>> 0;
+			if (typeof fun !== "function")
+				throw new TypeError();
+
+			var thisArg = arguments.length >= 2 ? arguments[1] : void 0;
+			for (var i = 0; i < len; i++) {
+				if (i in t)
+					fun.call(thisArg, t[i], i, t);
+			}
+		};
 	}
 });

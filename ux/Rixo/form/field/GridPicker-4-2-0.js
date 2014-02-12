@@ -1,38 +1,28 @@
 /**
- * Copyright (C) 2013 Eoko
+ * GridPicker implementation part that is specific to Ext 4.2.0.
  *
- * This file is part of Opence.
- *
- * Opence is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * Opence is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with Opence. If not, see <http://www.gnu.org/licenses/gpl.txt>.
- *
- * @copyright Copyright (C) 2013 Eoko
- * @licence http://www.gnu.org/licenses/gpl.txt GPLv3
- * @author Éric Ortega <eric@eoko.fr>
+ * @author Éric Ortega <eric@planysphere.fr>
+ * @since 2014-02-12 21:30
  */
+Ext.define('Ext.ux.Rixo.form.field.GridPicker-4-2-0', {
+	override: 'Ext.ux.Rixo.form.field.GridPicker'
 
-/**
- * Adds the {@link #getLoadOptions} method to {@link Ext.form.field.ComboBox}.
- *
- * @since 2013-06-20 00:39
- */
-Ext.define('Ext.ux.Rixo.Ext.form.field.ComboBox.GetOptions-4-2-0', {
-	override: 'Ext.form.field.ComboBox'
-
+	/**
+	 * Gets the option to load the store with the specified query.
+	 *
+	 * @param {String} queryString
+	 * @return {String}
+	 * @protected
+	 */
 	,getLoadOptions: function(queryString) {
-		return {
-			params: this.getParams(queryString)
-		};
+		var filter = this.queryFilter;
+		if (filter) {
+			filter.disabled = false;
+			filter.setValue(this.enableRegEx ? new RegExp(queryString) : queryString);
+			return {
+				filters: [filter]
+			};
+		}
 	}
 
 	/**
