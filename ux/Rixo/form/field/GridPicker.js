@@ -10,7 +10,8 @@ Ext.define('Ext.ux.Rixo.form.field.GridPicker', {
 	,requires: [
 		'Ext.grid.Panel',
 		'Ext.ux.Rixo.Ext.form.field.ComboBox.GetOptions',
-		'Ext.ux.Rixo.form.field.GridPickerKeyNav'
+		'Ext.ux.Rixo.form.field.GridPickerKeyNav',
+		'Ext.ux.Rixo.polyfill.ForEach',
 	]
 
 	,defaultGridConfig: {
