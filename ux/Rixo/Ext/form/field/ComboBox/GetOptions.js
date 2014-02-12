@@ -22,9 +22,7 @@
  */
 
 /**
- * Adds the {@link #getOptions} method to {@link Ext.form.field.ComboBox}.
- *
- * @todo Upgrade for Ext4.2.1
+ * Adds the {@link #getLoadOptions} method to {@link Ext.form.field.ComboBox}.
  *
  * @since 2013-06-20 00:39
  */

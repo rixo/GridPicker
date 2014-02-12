@@ -22,7 +22,7 @@
  */
 
 /**
- * Adds the {@link #getOptions} method to {@link Ext.form.field.ComboBox}.
+ * Adds the {@link #getLoadOptions} method to {@link Ext.form.field.ComboBox}.
  *
  * @since 2013-06-20 00:39
  */
@@ -37,7 +37,7 @@ Ext.define('Ext.ux.Rixo.Ext.form.field.ComboBox.GetOptions-4-2-0', {
 
 	/**
 	 * @inheritdoc
-	 * Overridden in order to implement {@link getLoadOptions}.
+	 * Overridden in order to implement {@link #getLoadOptions}.
 	 */
 	,loadPage: function(pageNum){
 		this.store.loadPage(pageNum, this.getLoadOptions());
@@ -45,7 +45,7 @@ Ext.define('Ext.ux.Rixo.Ext.form.field.ComboBox.GetOptions-4-2-0', {
 
 	/**
 	 * @inheritdoc
-	 * Overridden in order to implement {@link getLoadOptions}.
+	 * Overridden in order to implement {@link #getLoadOptions}.
 	 */
 	,doQuery: function(queryString, forceAll, rawQuery) {
 		queryString = queryString || '';
