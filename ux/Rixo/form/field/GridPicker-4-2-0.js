@@ -70,22 +70,23 @@ Ext.define('Ext.ux.Rixo.form.field.GridPicker-4-2-0', {
 				me.lastQuery = queryString;
 
 				if (isLocalMode) {
-
-					// Querying by a typed string...
-					if (queryString || !forceAll) {
-
-						// Ensure queryFilter is enabled and set the new value
-						me.queryFilter.disabled = false;
-						me.queryFilter.setValue(me.enableRegEx ? new RegExp(queryString) : queryString);
+					if (me.queryFilter) {
+						// Querying by a typed string...
+						if (queryString || !forceAll) {
+	
+							// Ensure queryFilter is enabled and set the new value
+							me.queryFilter.disabled = false;
+							me.queryFilter.setValue(me.enableRegEx ? new RegExp(queryString) : queryString);
+						}
+	
+						// Disable query value filter if no query string or forceAll passed
+						else {
+							me.queryFilter.disabled = true;
+						}
+	
+						// Filter the Store according to the updated filter
+						store.filter();
 					}
-
-					// Disable query value filter if no query string or forceAll passed
-					else {
-						me.queryFilter.disabled = true;
-					}
-
-					// Filter the Store according to the updated filter
-					store.filter();
 				} else {
 					// Set flag for onLoad handling to know how the Store was loaded
 					me.rawQuery = rawQuery;
