@@ -1,14 +1,18 @@
 GridPicker
 ==========
 
-Compatible with: *`ExtJS 4.2.0`*
+Compatible with: *`ExtJS 4.2.0`* *`ExtJS 4.2.1`*
 
 
 The `GridPicker` component is an extended combo box that replaces the default list view with a full fledged `GridPanel`.
 
 Among the extra possibilities that the grid panel offers, a notable one is the support of [buffered rendering][1]. Thanks to this, rendering huge data sets in buffered grid is actually very much faster than with standard combo boxes! Unfortunately, this component does not support [buffered store][2]; buffered rendering works with whole data set loaded in memory.
 
-I've committed myself to make **key navigation** work properly. But multiselect is not supported. And the code has been tested working with Ext4.2.0 only. I know Ext4.2.1 introduces breaking changes...
+I've committed myself to make **key navigation** work properly. But multiselect is not supported.
+
+**Update 2014-07-31**
+
+Thanks to feedback from users, the `GridPicker` should now work with Ext 4.2.1 too.
 
 
 Demo
