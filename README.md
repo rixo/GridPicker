@@ -57,7 +57,7 @@ Licenced under GPLv2
   [2]: http://docs.sencha.com/extjs/4.2.0/#!/api/Ext.data.Store-cfg-buffered
   [3]: http://docs.sencha.com/extjs/4.2.0/#
   [4]: http://docs.sencha.com/extjs/4.2.0/#!/api/Ext.grid.Panel
-  [5]: http://planysphere.fr/ext/GridPicker/examples
+  [5]: http://rixo.github.io/GridPicker/
   [6]: http://docs.sencha.com/extjs/4.2.0/#!/api/Ext.form.field.ComboBox-cfg-defaultListConfig
   [7]: http://docs.sencha.com/extjs/4.2.0/#!/api/Ext.form.field.ComboBox-cfg-listConfig
   [8]: http://docs.sencha.com/extjs/4.2.0/#!/api/Ext.form.field.ComboBox-cfg-displayField
