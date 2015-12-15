@@ -3,7 +3,7 @@ Ext.application({
 	name: 'GridPickerDemo'
 
 	,paths: {
-		'Ext.ux': '../../ux'
+		'Ext.ux': '../ux'
 	}
 
 	,requires: [
